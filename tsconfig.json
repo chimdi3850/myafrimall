@@ -1,0 +1,3 @@
+{
+  "extends": "@myafrimall/config/tsconfig.base.json"
+}
