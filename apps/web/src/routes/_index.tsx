@@ -1,37 +1,34 @@
-import type { Route } from "./+types/_index";
+import type { Route } from "./+types/signin";
+// import { AppSidebar} from "@myafrimall/ui/components/app-sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@myafrimall/ui/components/sidebar";
+import { Separator } from "@myafrimall/ui/components/separator"
+import { AppSidebar } from "@/components/sidebar";
+import { DashContent } from "@/components/dash-content"
 
-const TITLE_TEXT = `
- ██████╗ ███████╗████████╗████████╗███████╗██████╗
- ██╔══██╗██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗
- ██████╔╝█████╗     ██║      ██║   █████╗  ██████╔╝
- ██╔══██╗██╔══╝     ██║      ██║   ██╔══╝  ██╔══██╗
- ██████╔╝███████╗   ██║      ██║   ███████╗██║  ██║
- ╚═════╝ ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
-
- ████████╗    ███████╗████████╗ █████╗  ██████╗██╗  ██╗
- ╚══██╔══╝    ██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝
-    ██║       ███████╗   ██║   ███████║██║     █████╔╝
-    ██║       ╚════██║   ██║   ██╔══██║██║     ██╔═██╗
-    ██║       ███████║   ██║   ██║  ██║╚██████╗██║  ██╗
-    ╚═╝       ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
- `;
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "myafrimall" },
-    { name: "description", content: "myafrimall is a web application" },
-  ];
-}
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-2">
-      <pre className="overflow-x-auto font-mono text-sm">{TITLE_TEXT}</pre>
-      <div className="grid gap-6">
-        <section className="rounded-lg border p-4">
-          <h2 className="mb-2 font-medium">API Status</h2>
-        </section>
-      </div>
-    </div>
-  );
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+       <header className="sticky top-0 flex h-24 shrink-0 items-center gap-2 border-b bg-background px-4">
+            <SidebarTrigger className="-ml-1" />
+             <Separator
+            orientation="vertical"
+            className="mr-2 data-[orientation=vertical]:h-full"
+          />
+          <div>
+            <h2 className="font-semibold text-lg">Invite & Earn</h2>
+            <p className="text-sm text-muted-foreground">
+              Keep track of your addresses, location updates. Edit, Delete, Update and see all<br></br> your saved addresses
+            </p>
+          </div>
+       </header>
+       <DashContent />
+      </SidebarInset>
+    </SidebarProvider>
+  )
 }
