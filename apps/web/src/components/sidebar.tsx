@@ -69,7 +69,7 @@ export function AppSidebar() {
                     </Avatar>
                     <div className="flex flex-col items-start">
                     <h5>Firstname</h5>
-                    <h5>Firstname</h5></div>
+                    <h5>Lastname</h5></div>
                 </div></SidebarMenuItem>
                 <SidebarMenuItem>
                     <SidebarMenuButton className="px-6 py-7">

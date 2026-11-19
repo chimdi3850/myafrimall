@@ -86,7 +86,7 @@ export function DashContent() {
                 <div className="grid min-w-0 grid-cols-1 gap-3 py-2 sm:grid-cols-2 xl:grid-cols-4">
                     <Card className="min-w-0 rounded-sm bg-[#5d68b2] text-white xl:col-span-1">
                         <CardHeader>Your Balance</CardHeader>
-                        <CardDescription className="px-5">3,000,000.28</CardDescription>
+                        <CardDescription className="px-5 text-white">3,000,000.28</CardDescription>
                         <CardContent><Button className="w-25 rounded-sm px-4 text-indigo-700 bg-white">Fund Wallet</Button></CardContent>
                     </Card>
                     <Card className="min-w-0">
