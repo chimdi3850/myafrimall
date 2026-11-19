@@ -49,14 +49,14 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--chart-1)",
+    color: "#626dc2",
   },
 } satisfies ChartConfig
 
 
 export function DashContent() {
     return (
-        <div className="grid gap-4 p-4">
+        <div className="grid min-w-0 gap-4 p-4">
             <div className="flex flex-col gap-2">
             <img src={Needs} alt="" />
             <div className="flex items-center justify-center gap-2">
@@ -83,13 +83,13 @@ export function DashContent() {
                 </SelectContent>
                 </Select>
                 </div>
-                <div className="flex flex-col md:flex-row items-center gap-4 py-2">
-                    <Card className="w-full rounded-sm bg-indigo-500  ">
+                <div className="grid min-w-0 grid-cols-1 gap-3 py-2 sm:grid-cols-2 xl:grid-cols-4">
+                    <Card className="min-w-0 rounded-sm bg-[#5d68b2] text-white xl:col-span-1">
                         <CardHeader>Your Balance</CardHeader>
                         <CardDescription className="px-5">3,000,000.28</CardDescription>
                         <CardContent><Button className="w-25 rounded-sm px-4 text-indigo-700 bg-white">Fund Wallet</Button></CardContent>
                     </Card>
-                    <Card className="w-full">
+                    <Card className="min-w-0">
                         <CardHeader className="flex items-center gap-4"><div className="flex items-center justify-center size-8 rounded-full bg-amber-500"><Truck className=" size-6 " /></div>
                             <CardTitle>
                                 Total Shipments
@@ -100,7 +100,7 @@ export function DashContent() {
                             <div className="flex items-center text-lg gap-2"><span className="text-muted-foreground text-sm">vs last 4 months:</span>4</div>
                         </CardContent>
                     </Card>
-                    <Card className="w-full">
+                    <Card className="min-w-0">
                         <CardHeader className="flex items-center gap-4"><div className="flex items-center justify-center size-8 rounded-full bg-emerald-400"><ArrowUp className=" size-6 bg-green-500" /></div>
                             <CardTitle>
                                 Total Exports
@@ -111,7 +111,7 @@ export function DashContent() {
                             <div className="flex items-center text-lg gap-2"><span className="text-muted-foreground text-sm">vs last 4 months:</span>4</div>
                         </CardContent>
                     </Card>
-                    <Card className="w-full">
+                    <Card className="min-w-0">
                         <CardHeader className="flex items-center gap-4"><div className="flex items-center justify-center size-8 rounded-full"><MoveDown className=" size-6 text-green-950" /></div>
                             <CardTitle>
                                 Total Imports
@@ -129,8 +129,8 @@ export function DashContent() {
                     <h4>Recent Shipment</h4>
                     <Button variant={"outline"}className="rounded-sm">See All</Button>
                 </div>
-                <div>
-                    <Card>
+                <div className="min-w-0">
+                    <Card className="min-w-0">
                         <CardHeader className="flex items-center justify-between">
                             <CardTitle>Company Growth</CardTitle>
                             <Tabs defaultValue="year">
@@ -141,8 +141,8 @@ export function DashContent() {
       </TabsList>
       </Tabs>
                         </CardHeader>
-                              <CardContent>
-        <ChartContainer className="h-64 w-full" config={chartConfig}>
+                              <CardContent className="min-w-0 overflow-hidden">
+        <ChartContainer className="h-64 min-w-0 w-full" config={chartConfig}>
           <AreaChart
             accessibilityLayer
             data={chartData}
@@ -167,7 +167,7 @@ export function DashContent() {
               dataKey="desktop"
               type="natural"
               fill="var(--color-desktop)"
-              fillOpacity={0.4}
+              fillOpacity={0.14}
               stroke="var(--color-desktop)"
             />
           </AreaChart>
@@ -178,8 +178,8 @@ export function DashContent() {
             </div>
             <Card>
             <CardContent className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                <div className="flex items-center justify-between w-1/2">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="grid min-w-0 flex-1 grid-cols-2 gap-3 sm:grid-cols-3">
                     <div className="flex flex-col items-start">
                         <h3 className="text-muted-foreground">Tracking ID</h3>
                         <p>MAF-100-234-291</p>
@@ -196,7 +196,7 @@ export function DashContent() {
                 <ChevronUp />
                 </div>
                 <Separator />
-                 <div className="flex items-center justify-between">
+                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                     <div className="flex flex-col items-start">
                         <h3 className="text-muted-foreground">Pick Up From</h3>
                         <p>🇳🇬 Lagos, Nigeria</p>
@@ -215,7 +215,7 @@ export function DashContent() {
                     </div>
                 </div>
                 <Separator />
-                 <div className="flex items-center justify-between">
+                 <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-col items-start">
                         <h3 className="text-muted-foreground">Processing Time</h3>
                         <p className="flex gap-2"><Clock10 /> 10 hours</p>
@@ -229,8 +229,8 @@ export function DashContent() {
             </Card>
             <Card>
             <CardContent className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                <div className="flex items-center justify-between w-1/2">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="grid min-w-0 flex-1 grid-cols-2 gap-3 sm:grid-cols-3">
                     <div className="flex flex-col items-start">
                         <h3 className="text-muted-foreground">Tracking ID</h3>
                         <p>MAF-100-234-291</p>
@@ -247,7 +247,7 @@ export function DashContent() {
                 <ChevronUp />
                 </div>
                 <Separator />
-                 <div className="flex items-center justify-between">
+                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                     <div className="flex flex-col items-start">
                         <h3 className="text-muted-foreground">Pick Up From</h3>
                         <p>🇳🇬 Lagos, Nigeria</p>
@@ -266,7 +266,7 @@ export function DashContent() {
                     </div>
                 </div>
                 <Separator />
-                 <div className="flex items-center justify-between">
+                 <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-col items-start">
                         <h3 className="text-muted-foreground">Processing Time</h3>
                         <p className="flex gap-2"><Clock10 /> 10 hours</p>

@@ -43,7 +43,7 @@ export default function App() {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
       disableTransitionOnChange
       storageKey="vite-ui-theme"
     >
